@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "next": "^15.3.4",
     "react": "^19.1.0",
@@ -30,7 +31,7 @@
     "node": "22",
     "npm": "10 || 11"
   },
-  "name": "starter-nextjs-15",
+  "name": "greatfrontend-nextjs",
   "private": true,
   "scripts": {
     "build": "next build",

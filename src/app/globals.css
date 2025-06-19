@@ -22,8 +22,43 @@
 @theme {
   --breakpoint-tb: 48em; /* Tablet: 768px */
   --breakpoint-dt: 90em; /* Desktop: 1440px */
+  /* Colors */
+  --color-amber-200: #fde68a;
+  --color-amber-50: #fffbeb;
+  --color-amber-700: #a16207;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-50: #f9fafb;
+  --color-green-200: #bbf7d0;
+  --color-green-50: #f0fdf4;
+  --color-green-700: #15803d;
+  --color-indigo-200: #c7d2fe;
+  --color-indigo-500: #6366f1;
+  --color-indigo-50: #eef2ff;
+  --color-indigo-600: #4f46e5;
+  --color-indigo-700: #4338ca;
+  --color-indigo-800: #3730a3;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-200: #e5e5e5;
+  --color-neutral-400: #a3a3a3;
+  --color-neutral-500: #737373;
+  --color-neutral-50: #fafafa;
+  --color-neutral-600: #525252;
+  --color-neutral-700: #404040;
+  --color-neutral-900: #171717;
+  --color-neutral-950: #0a0a0a;
+  --color-red-200: #fecaca;
+  --color-red-50: #fef2f2;
+  --color-red-600: #dc2626;
+  --color-red-700: #b91c1c;
+  --color-red-800: #991b1b;
+  --color-white: #fff;
+  --color-yellow-400: #facc15;
 
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-noto-sans);
+  --font-sans--font-variation-settings: "wdth" 100;
 
   --spacing: 0.25rem;
 
