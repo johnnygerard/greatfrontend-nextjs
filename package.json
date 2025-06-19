@@ -30,7 +30,7 @@
     "node": "22",
     "npm": "10 || 11"
   },
-  "name": "starter-nextjs-15",
+  "name": "greatfrontend-nextjs",
   "private": true,
   "scripts": {
     "build": "next build",
