@@ -10,9 +10,10 @@ const notoSans = Noto_Sans({
   weight: ["400", "500", "600"],
 });
 
-const APP_NAME = "appName";
-const TITLE = "title";
-const DESCRIPTION = "description";
+const APP_NAME = "GreatFrontEnd";
+const TITLE = `${APP_NAME} Solutions`;
+const DESCRIPTION =
+  "Browse my collection of solutions to GreatFrontEnd Projects, demonstrating my frontend engineering expertise.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://placeholder.example.com"),
