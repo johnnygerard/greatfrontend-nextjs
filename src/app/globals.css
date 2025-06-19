@@ -18,6 +18,12 @@
   button:enabled {
     cursor: pointer;
   }
+
+  a,
+  button {
+    outline: transparent solid 0;
+    outline-offset: 0;
+  }
 }
 
 @media screen and (update: fast) and (prefers-reduced-motion: no-preference) {
