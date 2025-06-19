@@ -1,4 +1,8 @@
-# GreatFrontEnd Projects
+# GreatFrontEnd Solutions
+
+This repository contains solutions to various frontend challenges from the
+[GreatFrontEnd Projects](https://www.greatfrontend.com/projects) platform.
+All my solutions use the technologies and tools listed below.
 
 ## Tech Stack
 
