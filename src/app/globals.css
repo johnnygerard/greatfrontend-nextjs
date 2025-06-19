@@ -57,7 +57,8 @@
   --color-white: #fff;
   --color-yellow-400: #facc15;
 
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-noto-sans);
+  --font-sans--font-variation-settings: "wdth" 100;
 
   --spacing: 0.25rem;
 
