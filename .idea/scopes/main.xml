@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="main" pattern="file[starter-nextjs-15]:*/&amp;&amp;!file:package-lock.json" />
+</component>

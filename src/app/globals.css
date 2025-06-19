@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@layer base {
+  button:enabled {
+    cursor: pointer;
+  }
+}
+
+@media screen and (update: fast) and (prefers-reduced-motion: no-preference) {
+  :root {
+    @apply scroll-smooth;
+  }
+}
+
+@media not (update: fast) {
+  * {
+    @apply !animate-none !transition-none;
+  }
+}
+
+/*noinspection CssUnresolvedCustomProperty*/
+@theme {
+  --breakpoint-tb: 48em; /* Tablet: 768px */
+  --breakpoint-dt: 90em; /* Desktop: 1440px */
+
+  --font-sans: var(--font-geist-sans);
+
+  --spacing: 0.25rem;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  }
+  --animate-fade-in: fadeIn var(--default-transition-duration)
+    var(--default-transition-timing-function);
+}
