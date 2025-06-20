@@ -23,7 +23,7 @@ const Page = () => {
       <ul className="space-y-12">
         {types.map((type) => (
           <li key={type}>
-            <ul className="flex flex-wrap items-center gap-5 pr-1">
+            <ul className="flex flex-wrap items-center gap-5 max-sm:pr-1">
               {(["md", "lg", "xl", "2xl", "2xl"] as const).map((size, i) => (
                 <li key={i}>
                   <Button
