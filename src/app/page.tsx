@@ -9,14 +9,25 @@ const HomePage = () => {
           GreatFrontEnd Solutions
         </h1>
         <ul className="space-y-3">
-          <li>
-            <Link
-              href="/solution/badge-component"
-              className="inline-block rounded-lg border border-neutral-200 bg-neutral-100 px-5 py-2 text-neutral-800 transition-colors hover:bg-neutral-200 hover:text-black"
-            >
-              Badge Component
-            </Link>
-          </li>
+          {[
+            {
+              text: "Badge Component",
+              url: "/solution/badge-component",
+            },
+            {
+              text: "Button Component",
+              url: "/solution/button-component",
+            },
+          ].map(({ text, url }) => (
+            <li key={text}>
+              <Link
+                href={url}
+                className="inline-block rounded-lg border border-neutral-200 bg-neutral-100 px-5 py-2 text-neutral-800 transition-colors hover:bg-neutral-200 hover:text-black"
+              >
+                {text}
+              </Link>
+            </li>
+          ))}
         </ul>
       </section>
     </div>
