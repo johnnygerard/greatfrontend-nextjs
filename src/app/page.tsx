@@ -18,6 +18,10 @@ const HomePage = () => {
               text: "Button Component",
               url: "/solution/button-component",
             },
+            {
+              text: "Navbar Component",
+              url: "/solution/navbar-component",
+            },
           ].map(({ text, url }) => (
             <li key={text}>
               <Link
