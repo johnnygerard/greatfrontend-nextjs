@@ -40,8 +40,6 @@
 
 /*noinspection CssUnresolvedCustomProperty*/
 @theme {
-  --breakpoint-tb: 48em; /* Tablet: 768px */
-  --breakpoint-dt: 90em; /* Desktop: 1440px */
   /* Colors */
   --color-amber-200: #fde68a;
   --color-amber-50: #fffbeb;
