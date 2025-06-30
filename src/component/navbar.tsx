@@ -180,6 +180,9 @@ export const Navbar = memo(({ className }: Props) => {
                   <Link
                     className="block rounded px-3 py-2 text-sm text-neutral-900 hocus:bg-neutral-100"
                     href={path}
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                    }}
                   >
                     {text}
                   </Link>
@@ -192,6 +195,9 @@ export const Navbar = memo(({ className }: Props) => {
               asNextLink
               href="/learn-more"
               variant={{ size: "lg", type: "secondary" }}
+              onClick={() => {
+                setIsMenuOpen(false);
+              }}
             >
               Learn more
             </Button>
@@ -200,6 +206,9 @@ export const Navbar = memo(({ className }: Props) => {
               asNextLink
               href="/pricing"
               variant={{ size: "lg", type: "primary" }}
+              onClick={() => {
+                setIsMenuOpen(false);
+              }}
             >
               Try it out
             </Button>
