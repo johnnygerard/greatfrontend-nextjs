@@ -29,7 +29,7 @@ type Props = (
   iconLeft?: ReactNode;
   iconRight?: ReactNode;
   variant?: {
-    size?: "md" | "lg" | "xl" | "2xl";
+    size?: "sm" | "md" | "lg" | "xl" | "2xl";
     type?:
       | "primary"
       | "secondary"
@@ -90,6 +90,7 @@ export const Button = memo(
       // Padding
       isLinkVariant ||
         {
+          sm: iconOnly ? "p-2" : "px-3 py-2",
           md: iconOnly ? "p-2.5" : "px-3.5 py-2.5",
           lg: iconOnly ? "p-3" : "px-4 py-2.5",
           xl: iconOnly ? "p-3.5" : "px-5 py-3",
@@ -98,6 +99,7 @@ export const Button = memo(
       // Gap and font size
       iconOnly ||
         {
+          sm: "gap-1 text-sm",
           md: "gap-1 text-sm",
           lg: "gap-1.5 text-base",
           xl: "gap-1.5 text-base",
