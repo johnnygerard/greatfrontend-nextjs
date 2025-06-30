@@ -109,12 +109,12 @@ export const Button = memo(
     );
 
     const content = iconOnly ? (
-      <div className={iconStyle}>{children}</div>
+      <span className={iconStyle}>{children}</span>
     ) : (
       <>
-        {iconLeft && <div className={iconStyle}>{iconLeft}</div>}
+        {iconLeft && <span className={iconStyle}>{iconLeft}</span>}
         <span className="px-0.5">{children}</span>
-        {iconRight && <div className={iconStyle}>{iconRight}</div>}
+        {iconRight && <span className={iconStyle}>{iconRight}</span>}
       </>
     );
 
