@@ -25,7 +25,7 @@ type Props = (
 ) & {
   children: ReactNode;
   className?: string;
-  icon?: ReactNode;
+  iconOnly?: boolean;
   iconLeft?: ReactNode;
   iconRight?: ReactNode;
   variant?: {
@@ -46,13 +46,12 @@ export const Button = memo(
     asNextLink,
     children,
     className,
-    icon,
+    iconOnly,
     iconLeft,
     iconRight,
     variant: { size = "md", type = "primary" } = {},
     ...props
   }: Props) => {
-    const iconOnly = icon !== undefined;
     const isLinkVariant = ["linkColor", "linkGray"].includes(type);
     const iconStyle = clsx(
       size === "2xl" ? "size-6 p-0.5" : "size-5 p-[0.10419rem]",
@@ -107,8 +106,8 @@ export const Button = memo(
       className,
     );
 
-    const content = icon ? (
-      <div className={iconStyle}>{icon}</div>
+    const content = iconOnly ? (
+      <div className={iconStyle}>{children}</div>
     ) : (
       <>
         {iconLeft && <div className={iconStyle}>{iconLeft}</div>}
