@@ -9,7 +9,7 @@ type Props = {
 export const LogoAbstractly = memo(({ className }: Props) => {
   return (
     <div className={clsx("flex w-fit items-center gap-1 pe-0.5", className)}>
-      <LogomarkAbstractly />
+      <LogomarkAbstractly aria-hidden />
       <span className="font-bold -tracking-[0.06rem] text-neutral-900">
         Abstractly
       </span>
