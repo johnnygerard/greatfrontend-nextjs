@@ -5,7 +5,7 @@ import { IconClose } from "@/component/svg/icon-close";
 import { IconHamburgerMenu } from "@/component/svg/icon-hamburger-menu";
 import { clsx } from "clsx";
 import Link from "next/link";
-import { memo, useEffect, useState } from "react";
+import { memo, useEffect, useRef, useState } from "react";
 
 const links: Array<{
   text: string;
@@ -24,6 +24,41 @@ type Props = {
 
 export const Navbar = memo(({ className }: Props) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navbarDrawerRef = useRef<HTMLDivElement>(null);
+
+  // Trap focus within the mobile navigation drawer
+  useEffect(() => {
+    if (!isMenuOpen) return;
+    const navbarDrawer = navbarDrawerRef.current;
+    if (!navbarDrawer) return;
+    const focusableElements = navbarDrawer.querySelectorAll(
+      "a[href], button",
+    ) as NodeListOf<HTMLAnchorElement | HTMLButtonElement>;
+
+    const first = focusableElements[0];
+    const last = focusableElements[focusableElements.length - 1];
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== "Tab") return;
+
+      if (event.shiftKey) {
+        if (document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        }
+        return;
+      }
+      if (document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+
+    navbarDrawer.addEventListener("keydown", handleKeyDown);
+    return () => {
+      navbarDrawer.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isMenuOpen]);
 
   // Close menu on Escape key press
   useEffect(() => {
@@ -90,13 +125,16 @@ export const Navbar = memo(({ className }: Props) => {
         <div className="flex h-17 items-center justify-between px-4 pt-4 sm:px-8">
           <LogoAbstractly />
           <Button
+            aria-controls="navbar-drawer"
+            aria-expanded={isMenuOpen}
+            title="Open menu"
             iconOnly
             variant={{ size: "sm", type: "linkGray" }}
             onClick={() => {
               setIsMenuOpen(true);
             }}
           >
-            <IconHamburgerMenu />
+            <IconHamburgerMenu aria-hidden />
           </Button>
         </div>
 
@@ -112,6 +150,9 @@ export const Navbar = memo(({ className }: Props) => {
 
         {/* Navigation drawer */}
         <div
+          ref={navbarDrawerRef}
+          id="navbar-drawer"
+          inert={!isMenuOpen}
           className={clsx(
             "flex flex-col gap-6",
             "fixed top-0 bottom-0 left-0 w-90 max-w-screen bg-white px-4 pt-8 pb-4",
@@ -122,13 +163,14 @@ export const Navbar = memo(({ className }: Props) => {
           <div className="flex items-center justify-between">
             <LogoAbstractly />
             <Button
+              title="Close menu"
               iconOnly
               variant={{ size: "sm", type: "linkGray" }}
               onClick={() => {
                 setIsMenuOpen(false);
               }}
             >
-              <IconClose />
+              <IconClose aria-hidden />
             </Button>
           </div>
           <nav aria-label="Main" className="flex-1">
