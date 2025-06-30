@@ -5,7 +5,7 @@ import { IconClose } from "@/component/svg/icon-close";
 import { IconHamburgerMenu } from "@/component/svg/icon-hamburger-menu";
 import { clsx } from "clsx";
 import Link from "next/link";
-import { memo, useState } from "react";
+import { memo, useEffect, useState } from "react";
 
 const links: Array<{
   text: string;
@@ -24,6 +24,25 @@ type Props = {
 
 export const Navbar = memo(({ className }: Props) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Close menu on Escape key press
+  useEffect(() => {
+    if (!isMenuOpen) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (
+        event.key === "Escape" &&
+        !(event.altKey || event.ctrlKey || event.metaKey || event.shiftKey)
+      ) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isMenuOpen]);
 
   return (
     <header>
