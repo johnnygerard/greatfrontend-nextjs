@@ -18,11 +18,15 @@ const HomePage = () => {
               text: "Button Component",
               url: "/solution/button-component",
             },
+            {
+              text: "Navbar Component",
+              url: "/solution/navbar-component",
+            },
           ].map(({ text, url }) => (
             <li key={text}>
               <Link
                 href={url}
-                className="inline-block rounded-lg border border-neutral-200 bg-neutral-100 px-5 py-2 text-neutral-800 transition-colors hover:bg-neutral-200 hover:text-black"
+                className="inline-block rounded-lg border border-neutral-200 bg-neutral-100 px-5 py-2 text-neutral-800 transition-colors hocus:bg-neutral-200 hocus:text-black"
               >
                 {text}
               </Link>

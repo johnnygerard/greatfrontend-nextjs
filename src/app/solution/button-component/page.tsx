@@ -27,7 +27,7 @@ const Page = () => {
               {(["md", "lg", "xl", "2xl", "2xl"] as const).map((size, i) => (
                 <li key={i}>
                   <Button
-                    icon={i === 4 ? icon : undefined}
+                    iconOnly={i === 4}
                     iconLeft={i === 1 ? icon : undefined}
                     iconRight={i === 2 ? icon : undefined}
                     variant={{
@@ -37,7 +37,7 @@ const Page = () => {
                       size: type === "tertiary" && i === 3 ? "xl" : size,
                     }}
                   >
-                    Button CTA
+                    {i === 4 ? icon : "Button CTA"}
                   </Button>
                 </li>
               ))}

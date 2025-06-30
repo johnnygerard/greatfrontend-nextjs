@@ -34,14 +34,14 @@
 
 @media not (update: fast) {
   * {
-    @apply !animate-none !transition-none;
+    @apply animate-none! transition-none!;
   }
 }
 
 /*noinspection CssUnresolvedCustomProperty*/
 @theme {
-  --breakpoint-tb: 48em; /* Tablet: 768px */
-  --breakpoint-dt: 90em; /* Desktop: 1440px */
+  --lg-canvas: 148deg, #f9fafb 8.89%, #d2d6db 100.48%;
+
   /* Colors */
   --color-amber-200: #fde68a;
   --color-amber-50: #fffbeb;
