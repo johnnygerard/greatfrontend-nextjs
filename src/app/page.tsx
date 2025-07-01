@@ -30,7 +30,7 @@ const HomePage = () => {
             <li key={text}>
               <Link
                 href={url}
-                className="inline-block rounded-lg border border-neutral-200 bg-neutral-100 px-5 py-2 text-neutral-800 transition-colors hocus:bg-neutral-200 hocus:text-black"
+                className="block rounded-lg border border-neutral-200 bg-neutral-100 px-5 py-2 text-center text-neutral-800 transition-colors hocus:bg-neutral-200 hocus:text-black"
               >
                 {text}
               </Link>
