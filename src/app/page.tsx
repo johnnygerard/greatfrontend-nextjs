@@ -22,6 +22,10 @@ const HomePage = () => {
               text: "Navbar Component",
               url: "/solution/navbar-component",
             },
+            {
+              text: "Text Input Component",
+              url: "/solution/text-input-component",
+            },
           ].map(({ text, url }) => (
             <li key={text}>
               <Link
