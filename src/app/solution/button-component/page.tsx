@@ -1,5 +1,5 @@
 import { Button } from "@/component/button";
-import { IconStar } from "@/component/svg/icon-star";
+import { RiStarLine } from "@remixicon/react";
 import { Metadata } from "next";
 import { memo } from "react";
 
@@ -16,7 +16,7 @@ const Page = () => {
     "linkGray",
     "destructive",
   ] as const;
-  const icon = <IconStar />;
+  const icon = <RiStarLine className="size-full" />;
 
   return (
     <div className="flex min-h-screen justify-center bg-white px-6 py-28 sm:px-8">

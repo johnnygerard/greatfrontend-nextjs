@@ -1,8 +1,7 @@
 "use client";
 import { Button } from "@/component/button";
 import { LogoAbstractly } from "@/component/logo-abstractly";
-import { IconClose } from "@/component/svg/icon-close";
-import { IconHamburgerMenu } from "@/component/svg/icon-hamburger-menu";
+import { RiCloseLine, RiMenuFill } from "@remixicon/react";
 import { clsx } from "clsx";
 import Link from "next/link";
 import { memo, useEffect, useRef, useState } from "react";
@@ -134,7 +133,7 @@ export const Navbar = memo(({ className }: Props) => {
               setIsMenuOpen(true);
             }}
           >
-            <IconHamburgerMenu aria-hidden />
+            <RiMenuFill aria-hidden className="size-full text-neutral-600" />
           </Button>
         </div>
 
@@ -170,7 +169,7 @@ export const Navbar = memo(({ className }: Props) => {
                 setIsMenuOpen(false);
               }}
             >
-              <IconClose aria-hidden />
+              <RiCloseLine aria-hidden className="size-full text-neutral-600" />
             </Button>
           </div>
           <nav aria-label="Main" className="flex-1">
