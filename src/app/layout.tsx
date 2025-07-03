@@ -7,7 +7,7 @@ const notoSans = Noto_Sans({
   display: "swap",
   subsets: ["latin"],
   variable: "--font-noto-sans",
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const APP_NAME = "GreatFrontEnd";
