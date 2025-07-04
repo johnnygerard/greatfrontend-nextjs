@@ -42,7 +42,7 @@ export const TextInput = memo(
     const errorId = `${inputId}-error`;
     const hintId = `${inputId}-hint`;
     const iconStyle = clsx(
-      "absolute top-1/2 -translate-y-1/2 [&_img,&_svg]:h-auto",
+      "absolute top-1/2 -translate-y-1/2 [&_img,&_svg]:h-auto [&>*]:block",
     );
 
     return (
