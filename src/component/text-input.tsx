@@ -131,7 +131,7 @@ export const TextInput = memo(
                 : "focus-visible:shadow-[var(--focus-ring),0_1px_2px_rgba(16,24,40,0.05)]",
               // Disabled state
               "disabled:cursor-not-allowed disabled:outline-neutral-100",
-              "disabled:placeholder:text-neutral-400",
+              "disabled:text-neutral-400 disabled:placeholder:text-neutral-400",
             )}
             type={type}
             id={inputId}
