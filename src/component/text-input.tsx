@@ -127,8 +127,8 @@ export const TextInput = memo(
               // Focused state
               "focus-visible:outline-transparent",
               error
-                ? "focus-visible:shadow-(--text-input-error-ring)"
-                : "focus-visible:shadow-(--text-input-focus-ring)",
+                ? "focus-visible:shadow-(--error-focus-ring)"
+                : "focus-visible:shadow-[var(--focus-ring),0_1px_2px_rgba(16,24,40,0.05)]",
               // Disabled state
               "disabled:cursor-not-allowed disabled:outline-neutral-100",
               "disabled:placeholder:text-neutral-400",
