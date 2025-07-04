@@ -21,7 +21,8 @@
 
   a,
   button,
-  input {
+  input,
+  textarea {
     outline: transparent solid 0;
     outline-offset: 0;
   }
