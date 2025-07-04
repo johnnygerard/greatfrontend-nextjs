@@ -121,7 +121,7 @@ export const Navbar = memo(({ className }: Props) => {
       {/* Mobile and tablet */}
       <div className={clsx("xl:hidden", className)}>
         {/* Navigation bar */}
-        <div className="flex h-17 items-center justify-between px-4 pt-4 sm:px-8">
+        <div className="box-content flex h-17 items-center justify-between px-4 pt-4 sm:px-8">
           <LogoAbstractly />
           <Button
             aria-controls="navbar-drawer"

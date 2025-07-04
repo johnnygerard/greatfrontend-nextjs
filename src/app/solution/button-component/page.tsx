@@ -1,5 +1,6 @@
 import { Button } from "@/component/button";
 import { RiStarLine } from "@remixicon/react";
+import { clsx } from "clsx";
 import { Metadata } from "next";
 import { memo } from "react";
 
@@ -16,7 +17,13 @@ const Page = () => {
     "linkGray",
     "destructive",
   ] as const;
-  const icon = <RiStarLine className="size-full" />;
+  const icon = (size: string) => (
+    <span
+      className={clsx("block", size === "2xl" ? "p-0.5" : "p-[0.10419rem]")}
+    >
+      <RiStarLine className="size-full" />
+    </span>
+  );
 
   return (
     <div className="flex min-h-screen justify-center bg-white px-6 py-28 sm:px-8">
@@ -28,8 +35,8 @@ const Page = () => {
                 <li key={i}>
                   <Button
                     iconOnly={i === 4}
-                    iconLeft={i === 1 ? icon : undefined}
-                    iconRight={i === 2 ? icon : undefined}
+                    iconLeft={i === 1 ? icon(size) : undefined}
+                    iconRight={i === 2 ? icon(size) : undefined}
                     variant={{
                       type,
                       // The following design mistake (xl instead of 2xl for tertiary)
@@ -37,7 +44,7 @@ const Page = () => {
                       size: type === "tertiary" && i === 3 ? "xl" : size,
                     }}
                   >
-                    {i === 4 ? icon : "Button CTA"}
+                    {i === 4 ? icon(size) : "Button CTA"}
                   </Button>
                 </li>
               ))}

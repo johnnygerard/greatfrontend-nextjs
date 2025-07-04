@@ -21,7 +21,8 @@
 
   a,
   button,
-  input {
+  input,
+  textarea {
     outline: transparent solid 0;
     outline-offset: 0;
   }
@@ -42,11 +43,10 @@
 /*noinspection CssUnresolvedCustomProperty*/
 @theme {
   --lg-canvas: 148deg, #f9fafb 8.89%, #d2d6db 100.48%;
-  --text-input-error-ring:
+  --error-focus-ring:
     0px 0px 0px 1px #d92d20, 0px 0px 0px 4px rgba(217, 45, 32, 0.12);
-  --text-input-focus-ring:
-    0px 0px 0px 1px #444ce7, 0px 1px 2px 0px rgba(16, 24, 40, 0.05),
-    0px 0px 0px 4px rgba(68, 76, 231, 0.12);
+  --focus-ring:
+    0px 0px 0px 1px #444ce7, 0px 0px 0px 4px rgba(68, 76, 231, 0.12);
 
   /* Colors */
   --color-amber-200: #fde68a;
