@@ -52,6 +52,8 @@ export const TextInput = memo(
     iconRight,
     iconRightShowsError,
     label,
+    onBlur,
+    onChange,
     type = "text",
     validationMessages = {},
     validator,
@@ -138,8 +140,14 @@ export const TextInput = memo(
             aria-describedby={hint ? hintId : undefined}
             aria-errormessage={error ? errorId : undefined}
             aria-invalid={Boolean(error)}
-            onBlur={() => validate()}
-            onChange={() => validate()}
+            onBlur={(event) => {
+              onBlur?.(event);
+              validate();
+            }}
+            onChange={(event) => {
+              onChange?.(event);
+              validate();
+            }}
             {...props}
           />
           {iconRight && (
