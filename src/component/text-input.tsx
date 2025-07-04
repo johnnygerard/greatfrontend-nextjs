@@ -1,3 +1,4 @@
+"use client";
 import { clsx } from "clsx";
 import {
   DetailedHTMLProps,
@@ -5,6 +6,8 @@ import {
   memo,
   ReactNode,
   useId,
+  useRef,
+  useState,
 } from "react";
 
 type InputProps = DetailedHTMLProps<
@@ -12,11 +15,20 @@ type InputProps = DetailedHTMLProps<
   HTMLInputElement
 >;
 
+// @see https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#the-constraint-validation-api
+const validityStateKeys = [
+  "valueMissing",
+  "typeMismatch",
+  "badInput",
+  "tooShort",
+  "tooLong",
+  "patternMismatch",
+] as const;
+
 type Props = Omit<
   InputProps,
   "aria-describedby" | "aria-errormessage" | "aria-invalid" | "id"
 > & {
-  error?: string;
   hint?: string;
   iconLeft?: ReactNode;
   iconRight?: ReactNode;
@@ -24,26 +36,59 @@ type Props = Omit<
   label?: string;
   // @see https://html.spec.whatwg.org/multipage/input.html
   type?: "email" | "password" | "search" | "tel" | "text" | "url";
+  validationMessages?: Partial<
+    Record<(typeof validityStateKeys)[number], string>
+  >;
+  validator?: (value: string) => string | undefined;
 };
 
 export const TextInput = memo(
   ({
     className,
-    error,
     hint,
     iconLeft,
     iconRight,
     iconRightShowsError,
     label,
     type = "text",
+    validationMessages = {},
+    validator,
     ...props
   }: Props) => {
+    const [error, setError] = useState("");
+    const inputRef = useRef<HTMLInputElement>(null);
     const inputId = useId();
     const errorId = `${inputId}-error`;
     const hintId = `${inputId}-hint`;
     const iconStyle = clsx(
       "absolute top-1/2 -translate-y-1/2 [&_img,&_svg]:h-auto [&>*]:block",
     );
+
+    const validate = () => {
+      const input = inputRef.current;
+      if (input === null) return;
+      const customError = validator?.(input.value);
+
+      if (customError) {
+        input.setCustomValidity(customError);
+        setError(customError);
+        return;
+      }
+
+      input.setCustomValidity("");
+      if (input.validity.valid) {
+        setError("");
+        return;
+      }
+
+      for (const key of validityStateKeys) {
+        if (input.validity[key]) {
+          input.setCustomValidity(validationMessages[key] ?? "");
+          setError(input.validationMessage);
+          return;
+        }
+      }
+    };
 
     return (
       <div className={clsx("flex w-full flex-col gap-1.5 text-sm", className)}>
@@ -67,6 +112,7 @@ export const TextInput = memo(
             </span>
           )}
           <input
+            ref={inputRef}
             className={clsx(
               "w-full min-w-0 rounded bg-neutral-50 py-2.5",
               iconLeft ? "pl-10.5" : "pl-3.5",
@@ -90,6 +136,8 @@ export const TextInput = memo(
             aria-describedby={hint ? hintId : undefined}
             aria-errormessage={error ? errorId : undefined}
             aria-invalid={Boolean(error)}
+            onBlur={() => validate()}
+            onChange={() => validate()}
             {...props}
           />
           {iconRight && (
