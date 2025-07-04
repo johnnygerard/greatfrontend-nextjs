@@ -4,7 +4,6 @@ import {
   DetailedHTMLProps,
   memo,
   TextareaHTMLAttributes,
-  useEffect,
   useId,
   useRef,
   useState,
@@ -42,18 +41,16 @@ export const TextArea = memo(
     validator,
     ...props
   }: Props) => {
-    const [characterCount, setCharacterCount] = useState<number | null>(null);
+    const [characterCount, setCharacterCount] = useState(() =>
+      maxLength === undefined
+        ? null
+        : (props.defaultValue ?? props.value ?? "").toString().length,
+    );
     const [error, setError] = useState(defaultError);
     const textAreaRef = useRef<HTMLTextAreaElement>(null);
     const id = useId();
     const errorId = `${id}-error`;
     const counterId = `${id}-counter`;
-
-    useEffect(() => {
-      const textArea = textAreaRef.current;
-      if (textArea === null) return;
-      setCharacterCount(maxLength === undefined ? null : textArea.value.length);
-    }, [maxLength]);
 
     const validate = () => {
       const textArea = textAreaRef.current;
