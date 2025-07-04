@@ -29,6 +29,7 @@ type Props = Omit<
   InputProps,
   "aria-describedby" | "aria-errormessage" | "aria-invalid" | "id"
 > & {
+  defaultError?: string; // Used to render the solution
   hint?: string;
   iconLeft?: ReactNode;
   iconRight?: ReactNode;
@@ -45,6 +46,7 @@ type Props = Omit<
 export const TextInput = memo(
   ({
     className,
+    defaultError = "",
     hint,
     iconLeft,
     iconRight,
@@ -55,7 +57,7 @@ export const TextInput = memo(
     validator,
     ...props
   }: Props) => {
-    const [error, setError] = useState("");
+    const [error, setError] = useState(defaultError);
     const inputRef = useRef<HTMLInputElement>(null);
     const inputId = useId();
     const errorId = `${inputId}-error`;
