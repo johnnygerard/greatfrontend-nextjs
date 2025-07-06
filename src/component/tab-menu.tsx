@@ -27,11 +27,14 @@ export const TabMenu = memo(
       <Tabs.Root className={className} defaultValue={defaultId}>
         <Tabs.List
           className={clsx(
-            "flex gap-2",
+            "flex",
             variant === "inline"
-              ? // Inside bottom border
-                "shadow-[inset_0_-1px_var(--color-neutral-300)]"
-              : "flex-wrap",
+              ? [
+                  // Inside bottom border
+                  "shadow-[inset_0_-1px_var(--color-neutral-300)]",
+                  "gap-6",
+                ]
+              : "flex-wrap gap-2",
           )}
         >
           {tabs.map(({ id, label }) => (
