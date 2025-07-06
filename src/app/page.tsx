@@ -34,6 +34,10 @@ const HomePage = () => {
               text: "Radio Card Component",
               url: "/solution/radio-card-component",
             },
+            {
+              text: "Tab Menu Component",
+              url: "/solution/tab-menu-component",
+            },
           ].map(({ text, url }) => (
             <li key={text}>
               <Link
