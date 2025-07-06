@@ -81,7 +81,7 @@ export const Button = memo(
       // Focus ring
       type === "destructive"
         ? "focus-visible:[box-shadow:0_0_0_1px_#D92D20,0_0_0_4px_rgba(217,45,32,0.12)]"
-        : "outline-4 focus-visible:outline-[rgba(68,76,231,0.12)]",
+        : "outline-4 focus-visible:outline-ring-brand",
       // Shadow
       ["primary", "secondary"].includes(type) &&
         "not-disabled:not-focus-visible:shadow",
