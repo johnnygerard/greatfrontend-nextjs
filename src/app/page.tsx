@@ -38,6 +38,10 @@ const HomePage = () => {
               text: "Tab Menu Component",
               url: "/solution/tab-menu-component",
             },
+            {
+              text: "Tabs Component",
+              url: "/solution/tabs-component",
+            },
           ].map(({ text, url }) => (
             <li key={text}>
               <Link
