@@ -30,6 +30,10 @@ const HomePage = () => {
               text: "Text Area Component",
               url: "/solution/text-area-component",
             },
+            {
+              text: "Radio Card Component",
+              url: "/solution/radio-card-component",
+            },
           ].map(({ text, url }) => (
             <li key={text}>
               <Link
