@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import { memo } from "react";
 
 export const metadata: Metadata = {
-  title: "Tab Menu Component",
+  title: "Tabs Component",
 };
 
 const Page = () => {
@@ -11,6 +11,7 @@ const Page = () => {
     <main className="flex min-h-screen justify-center bg-white px-4 py-50">
       <TabMenu
         className="w-75 max-w-full"
+        variant="inline"
         tabs={[
           {
             label: "Account",
