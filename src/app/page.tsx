@@ -42,6 +42,10 @@ const HomePage = () => {
               text: "Tabs Component",
               url: "/solution/tabs-component",
             },
+            {
+              text: "Toggle Component",
+              url: "/solution/toggle-component",
+            },
           ].map(({ text, url }) => (
             <li key={text}>
               <Link
