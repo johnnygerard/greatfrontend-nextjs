@@ -50,6 +50,10 @@ const HomePage = () => {
               text: "Tooltip Component",
               url: "/solution/tooltip-component",
             },
+            {
+              text: "Checkbox Component",
+              url: "/solution/checkbox-component",
+            },
           ].map(({ text, url }) => (
             <li key={text}>
               <Link
