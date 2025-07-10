@@ -43,7 +43,7 @@ const AppCheckbox = memo(({ className, onCheckedChange, ...props }: Props) => {
             )}
           />
           {/* Dash Icon */}
-          <div
+          <span
             className={clsx(
               "h-0.5 rounded-full bg-white transition-opacity",
               "absolute top-1/2 right-0.5 left-0.5 -translate-y-1/2",
