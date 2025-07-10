@@ -19,9 +19,14 @@ const AppCheckbox = memo(({ className, onCheckedChange, ...props }: Props) => {
           "relative block size-4 rounded-sm border",
           "transition-[border-color,background-color,box-shadow]",
           "focus-visible:shadow-(--focus-ring)",
-          checked
-            ? "border-indigo-600 bg-indigo-600"
-            : "border-neutral-300 bg-white focus-visible:border-indigo-600",
+          props.disabled
+            ? [
+                "cursor-not-allowed bg-neutral-200",
+                checked ? "border-transparent" : "border-neutral-300",
+              ]
+            : checked
+              ? "border-transparent bg-indigo-600"
+              : "border-neutral-300 bg-white focus-visible:border-indigo-600",
           className,
         )}
         onCheckedChange={(state) => {
