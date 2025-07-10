@@ -1,5 +1,6 @@
 "use client";
 import { clsx } from "clsx";
+import { Label } from "radix-ui";
 import {
   DetailedHTMLProps,
   memo,
@@ -83,9 +84,12 @@ export const TextArea = memo(
         className={clsx("flex h-40 w-full flex-col gap-1.5 text-sm", className)}
       >
         {label && (
-          <label className="w-fit font-medium text-neutral-700" htmlFor={id}>
+          <Label.Root
+            className="w-fit font-medium text-neutral-700"
+            htmlFor={id}
+          >
             {label}
-          </label>
+          </Label.Root>
         )}
         <textarea
           ref={textAreaRef}
