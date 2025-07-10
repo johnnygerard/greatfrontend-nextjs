@@ -46,6 +46,10 @@ const HomePage = () => {
               text: "Toggle Component",
               url: "/solution/toggle-component",
             },
+            {
+              text: "Tooltip Component",
+              url: "/solution/tooltip-component",
+            },
           ].map(({ text, url }) => (
             <li key={text}>
               <Link
