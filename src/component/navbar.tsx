@@ -133,7 +133,7 @@ export const Navbar = memo(({ className }: Props) => {
               setIsMenuOpen(true);
             }}
           >
-            <RiMenuFill aria-hidden className="size-full text-neutral-600" />
+            <RiMenuFill aria-hidden className="text-neutral-600" />
           </Button>
         </div>
 
@@ -169,7 +169,7 @@ export const Navbar = memo(({ className }: Props) => {
                 setIsMenuOpen(false);
               }}
             >
-              <RiCloseLine aria-hidden className="size-full text-neutral-600" />
+              <RiCloseLine aria-hidden className="text-neutral-600" />
             </Button>
           </div>
           <nav aria-label="Main" className="flex-1">

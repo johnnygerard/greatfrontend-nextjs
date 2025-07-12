@@ -53,7 +53,10 @@ export const Button = memo(
     ...props
   }: Props) => {
     const isLinkVariant = ["linkColor", "linkGray"].includes(type);
-    const iconStyle = clsx(size === "2xl" ? "size-6" : "size-5");
+    const iconStyle = clsx(
+      "[&_img,&_svg]:h-auto [&>*]:block",
+      size === "2xl" ? "[&_img,&_svg]:w-6" : "[&_img,&_svg]:w-5",
+    );
 
     const buttonStyle = clsx(
       // Base style
