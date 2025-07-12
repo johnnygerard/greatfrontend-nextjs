@@ -1,46 +1,46 @@
 [
   {
-    "text": "Badge Component",
-    "url": "/solution/badge-component"
-  },
-  {
-    "text": "Button Component",
-    "url": "/solution/button-component"
-  },
-  {
-    "text": "Navbar Component",
-    "url": "/solution/navbar-component"
-  },
-  {
-    "text": "Text Input Component",
-    "url": "/solution/text-input-component"
-  },
-  {
-    "text": "Text Area Component",
-    "url": "/solution/text-area-component"
-  },
-  {
-    "text": "Radio Card Component",
-    "url": "/solution/radio-card-component"
-  },
-  {
-    "text": "Tab Menu Component",
-    "url": "/solution/tab-menu-component"
-  },
-  {
-    "text": "Tabs Component",
-    "url": "/solution/tabs-component"
-  },
-  {
-    "text": "Toggle Component",
-    "url": "/solution/toggle-component"
+    "text": "Checkbox Component",
+    "url": "/solution/checkbox-component"
   },
   {
     "text": "Tooltip Component",
     "url": "/solution/tooltip-component"
   },
   {
-    "text": "Checkbox Component",
-    "url": "/solution/checkbox-component"
+    "text": "Toggle Component",
+    "url": "/solution/toggle-component"
+  },
+  {
+    "text": "Tabs Component",
+    "url": "/solution/tabs-component"
+  },
+  {
+    "text": "Tab Menu Component",
+    "url": "/solution/tab-menu-component"
+  },
+  {
+    "text": "Radio Card Component",
+    "url": "/solution/radio-card-component"
+  },
+  {
+    "text": "Text Area Component",
+    "url": "/solution/text-area-component"
+  },
+  {
+    "text": "Text Input Component",
+    "url": "/solution/text-input-component"
+  },
+  {
+    "text": "Navbar Component",
+    "url": "/solution/navbar-component"
+  },
+  {
+    "text": "Button Component",
+    "url": "/solution/button-component"
+  },
+  {
+    "text": "Badge Component",
+    "url": "/solution/badge-component"
   }
 ]
