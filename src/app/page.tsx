@@ -1,3 +1,4 @@
+import solutionLinks from "@data/solution-links.json";
 import Link from "next/link";
 import { memo } from "react";
 
@@ -9,52 +10,7 @@ const HomePage = () => {
           GreatFrontEnd Solutions
         </h1>
         <ul className="space-y-3">
-          {[
-            {
-              text: "Badge Component",
-              url: "/solution/badge-component",
-            },
-            {
-              text: "Button Component",
-              url: "/solution/button-component",
-            },
-            {
-              text: "Navbar Component",
-              url: "/solution/navbar-component",
-            },
-            {
-              text: "Text Input Component",
-              url: "/solution/text-input-component",
-            },
-            {
-              text: "Text Area Component",
-              url: "/solution/text-area-component",
-            },
-            {
-              text: "Radio Card Component",
-              url: "/solution/radio-card-component",
-            },
-            {
-              text: "Tab Menu Component",
-              url: "/solution/tab-menu-component",
-            },
-            {
-              text: "Tabs Component",
-              url: "/solution/tabs-component",
-            },
-            {
-              text: "Toggle Component",
-              url: "/solution/toggle-component",
-            },
-            {
-              text: "Tooltip Component",
-              url: "/solution/tooltip-component",
-            },
-            {
-              text: "Checkbox Component",
-              url: "/solution/checkbox-component",
-            },
-          ].map(({ text, url }) => (
+          {solutionLinks.map(({ text, url }) => (
             <li key={text}>
               <Link
                 href={url}
