@@ -43,12 +43,15 @@ export const Pagination = memo(
     const page = isUncontrolled ? internalPage : controlledPage;
     const lastPage = pageCount;
 
-    if (pageCount < 1 || !Number.isSafeInteger(pageCount))
-      throw new Error("Page count must be a positive safe integer");
+    if (pageCount < 1 || !Number.isSafeInteger(pageCount)) {
+      return <p>Error: Page count must be a positive safe integer</p>;
+    }
 
     if (page < FIRST_PAGE || page > lastPage || !Number.isSafeInteger(page)) {
-      throw new Error(
-        `Page must be a safe integer between ${FIRST_PAGE} and ${lastPage}`,
+      return (
+        <p>
+          Error: Page must be a safe integer between {FIRST_PAGE} and {lastPage}
+        </p>
       );
     }
 
