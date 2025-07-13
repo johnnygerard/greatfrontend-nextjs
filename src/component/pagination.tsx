@@ -44,15 +44,15 @@ export const Pagination = memo(
     const lastPage = pageCount;
 
     if (pageCount < 1 || !Number.isSafeInteger(pageCount)) {
-      return <p>Error: Page count must be a positive safe integer</p>;
+      const message = "Page count must be a positive safe integer";
+      console.error(message, { pageCount });
+      return <p>Error: {message}</p>;
     }
 
     if (page < FIRST_PAGE || page > lastPage || !Number.isSafeInteger(page)) {
-      return (
-        <p>
-          Error: Page must be a safe integer between {FIRST_PAGE} and {lastPage}
-        </p>
-      );
+      const message = `Page must be a safe integer between ${FIRST_PAGE} and ${lastPage}`;
+      console.error(message, { page });
+      return <p>Error: {message}</p>;
     }
 
     // Rules for ellipses:
