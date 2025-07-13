@@ -1,5 +1,6 @@
 "use client";
 import { clsx } from "clsx";
+import { Label } from "radix-ui";
 import {
   DetailedHTMLProps,
   InputHTMLAttributes,
@@ -97,12 +98,12 @@ export const TextInput = memo(
     return (
       <div className={clsx("flex w-full flex-col gap-1.5 text-sm", className)}>
         {label && (
-          <label
+          <Label.Root
             className="self-start font-medium text-neutral-700"
             htmlFor={inputId}
           >
             {label}
-          </label>
+          </Label.Root>
         )}
         <div className="relative">
           {iconLeft && (

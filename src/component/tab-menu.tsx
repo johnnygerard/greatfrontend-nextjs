@@ -13,6 +13,9 @@ type Props = {
   variant?: "standalone" | "inline";
 };
 
+/**
+ * Tab menu component with [Radix UI Tabs primitive]{@link https://www.radix-ui.com/primitives/docs/components/tabs}.
+ */
 export const TabMenu = memo(
   ({ activeLabel, className, variant = "standalone", ...props }: Props) => {
     const tabs = props.tabs.map((tab, index) => ({

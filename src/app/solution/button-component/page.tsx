@@ -1,6 +1,5 @@
 import { Button } from "@/component/button";
 import { RiStarLine } from "@remixicon/react";
-import { clsx } from "clsx";
 import { Metadata } from "next";
 import { memo } from "react";
 
@@ -18,11 +17,7 @@ const Page = () => {
     "destructive",
   ] as const;
   const icon = (size: string) => (
-    <span
-      className={clsx("block", size === "2xl" ? "p-0.5" : "p-[0.10419rem]")}
-    >
-      <RiStarLine className="size-full" />
-    </span>
+    <RiStarLine className={size === "2xl" ? "p-0.5" : "p-[0.10419rem]"} />
   );
 
   return (

@@ -6,6 +6,9 @@ import { memo } from "react";
 
 type Props = CheckboxProps;
 
+/**
+ * Checkbox component with [Radix UI Checkbox primitive]{@link https://www.radix-ui.com/primitives/docs/components/checkbox}.
+ */
 const AppCheckbox = memo(({ className, ...props }: Props) => (
   <div className="p-1">
     <Checkbox.Root

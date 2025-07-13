@@ -1,5 +1,6 @@
 "use client";
 import { clsx } from "clsx";
+import { Label } from "radix-ui";
 import {
   DetailedHTMLProps,
   InputHTMLAttributes,
@@ -57,7 +58,7 @@ export const RadioCard = memo(
           type="radio"
           {...props}
         />
-        <label
+        <Label.Root
           htmlFor={id}
           className={clsx(
             "flex items-center rounded bg-white font-medium text-neutral-900",
@@ -86,7 +87,7 @@ export const RadioCard = memo(
               {iconRight && <span className={iconStyle}>{iconRight}</span>}
             </>
           )}
-        </label>
+        </Label.Root>
       </>
     );
   },
