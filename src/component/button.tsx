@@ -114,7 +114,7 @@ export const Button = memo(
     ) : (
       <>
         {iconLeft && <span className={iconStyle}>{iconLeft}</span>}
-        <span className="px-0.5">{children}</span>
+        <span className="flex-1 px-0.5 text-start">{children}</span>
         {iconRight && <span className={iconStyle}>{iconRight}</span>}
       </>
     );
