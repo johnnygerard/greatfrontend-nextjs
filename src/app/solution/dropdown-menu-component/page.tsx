@@ -15,6 +15,8 @@ const Page = () => {
           closeOnSelect={false}
           defaultOpen={true}
           defaultValue="private"
+          // Animations are disabled for the purpose of screenshot diffs
+          enabledAnimations={false}
           label="Privacy options"
           options={[
             {

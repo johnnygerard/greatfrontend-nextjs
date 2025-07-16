@@ -10,6 +10,7 @@ type Props = {
   closeOnSelect?: boolean;
   defaultOpen?: boolean;
   defaultValue?: string;
+  enabledAnimations?: boolean;
   label: string;
   onValueChange?: (value: string) => void;
   options: Array<{
@@ -31,6 +32,7 @@ const component = memo(
     closeOnSelect = true,
     defaultOpen = false,
     defaultValue,
+    enabledAnimations = true,
     label,
     onValueChange,
     options,
@@ -60,10 +62,12 @@ const component = memo(
               "flex flex-col gap-2 rounded-lg bg-white p-2 shadow-lg",
               "w-(--radix-dropdown-menu-trigger-width)",
               // Collision-aware animations
-              "data-[side=top]:animate-(--animate-slide-up)",
-              "data-[side=bottom]:animate-(--animate-slide-down)",
-              "data-[side=left]:animate-(--animate-slide-left)",
-              "data-[side=right]:animate-(--animate-slide-right)",
+              enabledAnimations && [
+                "data-[side=top]:animate-(--animate-slide-up)",
+                "data-[side=bottom]:animate-(--animate-slide-down)",
+                "data-[side=left]:animate-(--animate-slide-left)",
+                "data-[side=right]:animate-(--animate-slide-right)",
+              ],
             )}
             sideOffset={4}
           >
