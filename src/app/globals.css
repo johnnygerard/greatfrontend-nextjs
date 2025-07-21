@@ -19,10 +19,7 @@
     cursor: pointer;
   }
 
-  a,
-  button,
-  input,
-  textarea {
+  :is(a, button, input, textarea):focus-visible {
     outline: transparent solid 0;
     outline-offset: 0;
   }
