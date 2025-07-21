@@ -1,4 +1,5 @@
 "use client";
+import { Tooltip } from "@/component/tooltip";
 import { RiAddFill, RiSubtractFill } from "@remixicon/react";
 import { clsx } from "clsx";
 import { Label } from "radix-ui";
@@ -92,7 +93,17 @@ export const ProductQuantityInput = memo(
               "[appearance:textfield]",
             )}
           />
-          {stepButton("up")}
+          {inputRef.current && inputRef.current.valueAsNumber >= max ? (
+            <Tooltip
+              defaultOpen={true}
+              delayDuration={0}
+              label="Insufficient stock"
+            >
+              {stepButton("up")}
+            </Tooltip>
+          ) : (
+            stepButton("up")
+          )}
         </div>
       </div>
     );
