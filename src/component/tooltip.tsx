@@ -27,7 +27,7 @@ const AppTooltip = memo(({ children, className, label, ...props }: Props) => {
             align="center"
             className={clsx(
               "rounded-lg bg-neutral-950 px-3 py-2 shadow-lg",
-              "text-xs font-medium text-white",
+              "animate-fade-in text-xs font-medium text-white",
             )}
           >
             <div>{label}</div>
