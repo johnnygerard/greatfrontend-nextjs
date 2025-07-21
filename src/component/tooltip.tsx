@@ -17,7 +17,7 @@ const AppTooltip = memo(({ children, className, label, ...props }: Props) => {
   return (
     <Tooltip.Provider>
       <Tooltip.Root {...props}>
-        <Tooltip.Trigger className={className} type="button">
+        <Tooltip.Trigger className={className} asChild>
           {children}
         </Tooltip.Trigger>
         <Tooltip.Portal>
