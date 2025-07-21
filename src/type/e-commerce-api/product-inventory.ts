@@ -1,7 +1,9 @@
+import { ProductColor } from "@/type/e-commerce-api/product-color";
+
 export type ProductInventory = {
   product_id: string;
   sku: string;
-  color: string;
+  color: ProductColor;
   size: string | number | null;
   list_price: number;
   discount: number | null;
